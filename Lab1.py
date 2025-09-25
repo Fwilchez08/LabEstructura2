@@ -770,7 +770,7 @@ def operaciones_nodo(arbol: ArbolAVL, nodo: Nodo):
         print("3. Encontrar padre")
         print("4. Encontrar abuelo")
         print("5. Encontrar tío")
-        print("6. 📊 Crear gráfico resaltando este nodo")
+        print("6. Crear gráfico resaltando este nodo")
         print("7. Volver al menú principal")
         
         try:
@@ -1011,11 +1011,11 @@ def main():
                 print("\n=== ESTADÍSTICAS DEL DATASET ===")
                 stats = arbol.obtener_estadisticas()
                 if stats:
-                    print(f"📊 Total de países: {stats['total_paises']}")
-                    print(f"🌡️  Temperatura mínima: {stats['temperatura_minima']:.2f}°C")
-                    print(f"🌡️  Temperatura máxima: {stats['temperatura_maxima']:.2f}°C")
-                    print(f"📈 Temperatura promedio: {stats['temperatura_promedio']:.2f}°C")
-                    print(f"📊 Mediana: {stats['mediana']:.2f}°C")
+                    print(f" Total de países: {stats['total_paises']}")
+                    print(f"  Temperatura mínima: {stats['temperatura_minima']:.2f}°C")
+                    print(f"  Temperatura máxima: {stats['temperatura_maxima']:.2f}°C")
+                    print(f" Temperatura promedio: {stats['temperatura_promedio']:.2f}°C")
+                    print(f" Mediana: {stats['mediana']:.2f}°C")
                 else:
                     print("No hay datos en el árbol")
                     
