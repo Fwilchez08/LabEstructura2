@@ -23,20 +23,15 @@ class Nodo:
 
 class LectorDatos:
     """
-    Clase para leer y procesar los datos del archivo CSV
+    En esta clase se leera y procesaran los datos del archivo CSV
     """
     
     @staticmethod
     def cargar_datos_desde_csv(ruta_archivo: str) -> List[tuple]:
 
         """
-        Carga los datos desde el archivo CSV y calcula la temperatura media
-        
-        Args:
+        Carga los datos desde el archivo CSV y calcula la media de temperatura
             ruta_archivo: Ruta al archivo CSV
-            
-        Returns:
-            Lista de tuplas (ISO3, País, Temperatura_Media)
         """
         paises_datos = []
         
@@ -78,7 +73,7 @@ class LectorDatos:
     @staticmethod
     def cargar_datos_ejemplo() -> List[tuple]:
         """
-        Datos de ejemplo para pruebas rápidas (fallback)
+        Datos de ejemplo para pruebas rápidas
         """
         return [
             ("COL", "Colombia", 24.5),
@@ -95,8 +90,8 @@ class LectorDatos:
 
 class ArbolAVL:
     """
-    Implementación de un árbol AVL (auto-balanceado)
-    Utiliza la temperatura media como métrica de comparación
+    Implementación de un árbol AVL
+    Utilizando la temperatura media como métrica de comparación
     """
     
     def __init__(self):
@@ -163,7 +158,7 @@ class ArbolAVL:
         return y
 
     def insertar(self, iso3: str, pais: str, temperatura_media: float) -> bool:
-        """Inserta un nuevo nodo en el árbol"""
+        """Función para insertar un nuevo nodo en el árbol"""
         try:
             self.raiz = self._insertar_recursivo(self.raiz, iso3, pais, temperatura_media)
             return True
@@ -172,7 +167,7 @@ class ArbolAVL:
             return False
 
     def _insertar_recursivo(self, nodo: Optional[Nodo], iso3: str, pais: str, temperatura_media: float) -> Nodo:
-        """Función recursiva para insertar un nodo"""
+        """version recursiva de insertar"""
         # Inserción normal de BST
         if not nodo:
             nuevo_nodo = Nodo(iso3, pais, temperatura_media)
@@ -220,13 +215,10 @@ class ArbolAVL:
 
     def cargar_datos_masivamente(self, datos: List[tuple]) -> int:
         """
-        Carga múltiples países al árbol
-        
-        Args:
+        Carga múltiples países al árbol, devolver cantidad de paises cargados con exito
+        usando
             datos: Lista de tuplas (ISO3, País, Temperatura)
-            
-        Returns:
-            Cantidad de países cargados exitosamente
+
         """
         contador = 0
         for iso3, pais, temperatura in datos:
@@ -235,7 +227,7 @@ class ArbolAVL:
         return contador
 
     def buscar(self, temperatura_media: float) -> Optional[Nodo]:
-        """Busca un nodo por su temperatura media"""
+        """Busca un nodo dependiendo de su temperatura media"""
         return self._buscar_recursivo(self.raiz, temperatura_media)
 
     def _buscar_recursivo(self, nodo: Optional[Nodo], temperatura_media: float) -> Optional[Nodo]:
@@ -379,7 +371,7 @@ class ArbolAVL:
         }
 
     def recorrido_por_niveles(self) -> List[List[str]]:
-        """Recorrido por niveles del árbol (BFS) - Versión recursiva"""
+        """Recorrido por niveles del árbol - Versión recursiva"""
         if not self.raiz:
             return []
         
