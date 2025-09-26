@@ -1098,11 +1098,8 @@ if __name__ == "__main__":
     # Verificación si Graphviz está disponible
     try:
         import graphviz
-        print("Graphviz disponible - Funciones de graficación habilitadas")
+        print("Graphviz disponible")
     except ImportError:
-        print(" Graphviz no está instalado. Para usar las funciones de graficación:")
-        print("   pip install graphviz")
-        print("   También necesita tener Graphviz instalado en su sistema")
-        print("   Descargar desde: https://graphviz.org/download/")
-    
+        print(" Graphviz no está instalado")
+
     main()
