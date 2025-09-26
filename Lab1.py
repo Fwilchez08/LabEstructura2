@@ -821,9 +821,9 @@ def main():
     print("="*70)
     
     # Intentar cargar datos desde CSV
-    ruta_csv = input("Ingrese la ruta del archivo CSV (o Enter para 'diccionario.txt'): ").strip()
+    ruta_csv = input("Ingrese la ruta del archivo CSV (o Enter para datos de prueba): ").strip()
     if not ruta_csv:
-        ruta_csv = "diccionario.txt"
+        ruta_csv = "datos de prueba"
     
     datos_csv = LectorDatos.cargar_datos_desde_csv(ruta_csv)
     
