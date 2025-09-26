@@ -738,17 +738,16 @@ def mostrar_menu():
     print("5.  Buscar nodo por nombre de país")
     print("6.  Buscar países con temperatura >= valor")
     print("7.  Mostrar recorrido por niveles")
-    print("8.  Mostrar árbol (texto)")
-    print("9.  Mostrar estadísticas del dataset")
-    print("10. Operaciones con nodo seleccionado")
+    print("8.  Mostrar estadísticas del dataset")
+    print("9. Operaciones con nodo seleccionado")
     print("-" * 70)
-    print("11.  Crear gráfico simple del árbol")
-    print("12. crear gráfico detallado con leyenda")
-    print("13.  Visualizar búsqueda de un nodo")
-    print("14.  Resaltar nodo específico en gráfico")
-    print("15.  Recargar datos desde CSV")
+    print("10.  Crear gráfico simple del árbol")
+    print("11. crear gráfico detallado con leyenda")
+    print("12.  Visualizar búsqueda de un nodo")
+    print("13.  Resaltar nodo específico en gráfico")
+    print("14.  Recargar datos desde CSV")
     print("-" * 70)
-    print("16. Salir")
+    print("15. Salir")
     print("="*70)
 
 def operaciones_nodo(arbol: ArbolAVL, nodo: Nodo):
@@ -995,11 +994,9 @@ def main():
                         print(f"Nivel {i+1}: {' | '.join(nivel)}")
                 else:
                     print("El árbol está vacío")
-                    
-            elif opcion == 8:  # Mostrar árbol
-                arbol.mostrar_arbol_simple()
+            
                 
-            elif opcion == 9:  # Estadísticas
+            elif opcion == 8:  # Estadísticas
                 print("\n=== ESTADÍSTICAS DEL DATASET ===")
                 stats = arbol.obtener_estadisticas()
                 if stats:
@@ -1011,7 +1008,7 @@ def main():
                 else:
                     print("No hay datos en el árbol")
                     
-            elif opcion == 10:  # Operaciones con nodo seleccionado
+            elif opcion == 9:  # Operaciones con nodo seleccionado
                 print("\n=== SELECCIONAR NODO PARA OPERACIONES ===")
                 if not arbol.nodos_almacenados:
                     print("No hay nodos en el árbol")
@@ -1035,13 +1032,13 @@ def main():
                     except ValueError:
                         print("Error: Ingrese un número válido")
                         
-            elif opcion == 11:  # Gráfico simple
+            elif opcion == 10:  # Gráfico simple
                 arbol.crear_grafico()
                 
-            elif opcion == 12:  # Gráfico detallado
+            elif opcion == 11:  # Gráfico detallado
                 arbol.crear_grafico_con_leyenda()
                 
-            elif opcion == 13:  # Visualizar búsqueda
+            elif opcion == 12:  # Visualizar búsqueda
                 print("\n=== VISUALIZAR BÚSQUEDA ===")
                 try:
                     temp = float(input("Temperatura a buscar: "))
@@ -1049,7 +1046,7 @@ def main():
                 except ValueError:
                     print("Error: Ingrese una temperatura válida")
                     
-            elif opcion == 14:  # Resaltar nodo específico
+            elif opcion == 13:  # Resaltar nodo específico
                 print("\n=== RESALTAR NODO ===")
                 try:
                     codigo = input("Código ISO3 del país a resaltar: ").upper()
@@ -1063,7 +1060,7 @@ def main():
                 except Exception as e:
                     print(f"Error: {e}")
 
-            elif opcion == 15:  # Recargar datos
+            elif opcion == 14:  # Recargar datos
                 print("\n=== RECARGAR DATOS DESDE CSV ===")
                 ruta_csv = input("Ingrese la ruta del archivo CSV: ").strip()
                 if ruta_csv:
@@ -1082,7 +1079,7 @@ def main():
                             print(f"   Rango: {stats['temperatura_minima']:.1f}°C - {stats['temperatura_maxima']:.1f}°C")
                             print(f"   Promedio: {stats['temperatura_promedio']:.1f}°C")
                     
-            elif opcion == 16:  # Salir
+            elif opcion == 15:  # Salir
                 print("\n¡Gracias por usar el programa!")
                 break
                 
